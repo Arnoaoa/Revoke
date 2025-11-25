@@ -1,0 +1,39 @@
+.tokenInfo {
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background: #f9f9f9;
+    border-radius: 8px;
+}
+
+.tokenInfo h3 {
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+.tokenInfo p {
+    margin: 0.5rem 0;
+    color: #333;
+}
+
+.tokenInfo code {
+    background: #e0e0e0;
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    word-break: break-all;
+}
+
+
+.allowancesForm {
+    background: #f9f9f9;
+    margin-top: 2rem;
+    padding: 1.5rem;
+    border-radius: 8px;
+}
+
+.allowancesForm h3 {
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+

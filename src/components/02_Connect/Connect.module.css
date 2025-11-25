@@ -1,0 +1,26 @@
+.connectSection {
+    background: white;
+    border-radius: 16px;
+    padding: 2rem;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+}
+
+.connectionInfo {
+    width: 100%;
+    padding: 1rem;
+    background: #f9f9f9;
+    border-radius: 8px;
+    font-size: 0.9rem;
+}
+
+.successMessage {
+    color: #2e7d32;
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+    font-weight: 600;
+}

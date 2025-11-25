@@ -1,0 +1,13 @@
+.allowanceManager,
+.tokenSection {
+    margin-bottom: 3rem;
+    background: white;
+    border-radius: 16px;
+    padding: 2rem;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+}
+
+.infoCard {
+    margin: 0;
+    font-size: 1.1rem;
+}
