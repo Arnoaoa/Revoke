@@ -8,14 +8,14 @@ interface AllowanceManagerProps {
 }
 
 export function AllowanceManager({ tokenAddress }: AllowanceManagerProps) {
-    const { address} = useAccount()
+    const { address, chain } = useAccount()
 
     const { data: tokenName } = useReadContract({
         address: tokenAddress,
         abi: erc20Abi,
         functionName: 'name',
     })
-    
+
     if (!tokenName) {
         return (
             <div className={styles.tokenInfo}>
@@ -63,6 +63,9 @@ export function AllowanceManager({ tokenAddress }: AllowanceManagerProps) {
                 </p>
                 <p>
                     <strong>Adresse:</strong> {tokenAddress}
+                </p>
+                <p>
+                    <strong>Chain ID:</strong> {chain?.id} {chain?.id === 8453 && <span> Base</span>}
                 </p>
             </div>
             <div className={styles.allowancesForm}>
