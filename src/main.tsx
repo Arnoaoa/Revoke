@@ -1,6 +1,5 @@
 import '@rainbow-me/rainbowkit/styles.css'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
-import { Buffer } from 'buffer'
 import { RainbowKitProvider, midnightTheme } from '@rainbow-me/rainbowkit'
 import React from 'react'
 import ReactDOM from 'react-dom/client'
@@ -11,8 +10,7 @@ import { config } from './wagmi.ts'
 
 import './index.css'
 
-// Polyfill Buffer pour le navigateur (nécessaire pour certaines bibliothèques Web3)
-;(globalThis as any).Buffer = Buffer
+
 
 const queryClient = new QueryClient()
 
