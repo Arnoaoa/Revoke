@@ -8,13 +8,14 @@ interface AllowanceManagerProps {
 }
 
 export function AllowanceManager({ tokenAddress }: AllowanceManagerProps) {
-    const { address, chain } = useAccount()
+    const { address} = useAccount()
 
     const { data: tokenName } = useReadContract({
         address: tokenAddress,
         abi: erc20Abi,
         functionName: 'name',
     })
+    
     if (!tokenName) {
         return (
             <div className={styles.tokenInfo}>
