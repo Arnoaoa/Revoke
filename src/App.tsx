@@ -5,13 +5,13 @@ import RevokeIt from './components/03_RevokeIt/RevokeIt.tsx'
 
 
 function App() {
-  const { address, isConnected } = useAccount()
+  const {address, isConnected } = useAccount()
   const chainId = useChainId()
 
   return (
     <main className="app-container">
       <Header />
-      <Connect isConnected={isConnected} address={address as `0x${string}`} chainId={chainId} />
+      <Connect isConnected={isConnected} address={address} chainId={chainId} />
       <RevokeIt isConnected={isConnected} />
     </main>
   )

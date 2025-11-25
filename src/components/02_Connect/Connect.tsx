@@ -3,7 +3,7 @@ import styles from './Connect.module.css'
 
 interface ConnectProps {
   isConnected: boolean;
-  address: string;
+  address: string | undefined;
   chainId: number;
 }
 
