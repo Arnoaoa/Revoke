@@ -15,7 +15,7 @@ export default function Connect({ isConnected, address, chainId }: ConnectProps)
   });
   return (
     <div className={styles.connectSection}>
-      <ConnectButton showBalance={true} chainStatus="icon"/>
+      <ConnectButton showBalance={{ smallScreen: false, largeScreen: false }} chainStatus="icon"/>
       {isConnected && (
         <div className={styles.connectionInfo}>
           <p><strong>Adresse:</strong> <code>{address}</code></p>
