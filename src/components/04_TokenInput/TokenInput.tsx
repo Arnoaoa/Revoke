@@ -6,7 +6,7 @@ interface TokenInputProps {
 }
 
 export default function TokenInput({ onTokenAddressChange }: TokenInputProps) {
-    const [tokenAddress, setTokenAddress] = useState('')
+    const [tokenAddress, setTokenAddress] = useState("")
 
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault()

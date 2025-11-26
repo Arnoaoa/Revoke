@@ -9,7 +9,7 @@ interface RevokeItProps {
 
 
 export default function RevokeIt({ isConnected }: RevokeItProps) {
-    const [tokenAddress, setTokenAddress] = useState<`0x${string}` | undefined>(undefined)
+    const [tokenAddress, setTokenAddress] = useState<`0x${string}` | null>(null)
 
     const handleTokenAddressChange = (address: string) => {
         if (address.startsWith('0x') && address.length === 42) {

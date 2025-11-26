@@ -10,20 +10,13 @@ interface AllowanceManagerProps {
 export function AllowanceManager({ tokenAddress }: AllowanceManagerProps) {
     const { address, chain } = useAccount()
 
+    // Tous les hooks doivent être appelés AVANT tout return conditionnel
     const { data: tokenName } = useReadContract({
         address: tokenAddress,
-        abi: erc20Abi,
+        abi: erc20Abi, //interface du contrat (def fcts)
         functionName: 'name',
     })
 
-    if (!tokenName) {
-        return (
-            <div className={styles.tokenInfo}>
-                <h3>Informations du Token</h3>
-                <p>Token non trouvé. Veuillez entrer une adresse Ethereum valide (0x...).</p>
-            </div>
-        )
-    }
     const { data: tokenSymbol } = useReadContract({
         address: tokenAddress,
         abi: erc20Abi,
@@ -34,6 +27,16 @@ export function AllowanceManager({ tokenAddress }: AllowanceManagerProps) {
     const { isLoading: isConfirming, isSuccess } = useWaitForTransactionReceipt({
         hash,
     })
+
+    // Maintenant on peut faire le return conditionnel APRÈS tous les hooks
+    if (!tokenName) {
+        return (
+            <div className={styles.tokenInfo}>
+                <h3>Informations du Token</h3>
+                <p>Token non trouvé. Veuillez entrer une adresse Ethereum valide (0x...).</p>
+            </div>
+        )
+    }
 
     const revokeAllowance = async (spender: string) => {
         if (!address) return;
