@@ -1,10 +1,11 @@
 import styles from './AllowanceManager.module.css'
 import { useAccount, useReadContract, useWriteContract, useWaitForTransactionReceipt } from 'wagmi'
-import { erc20Abi } from 'viem'
+import { Address, erc20Abi, Hex } from 'viem'
 import AllowanceForm from '../06_AllowanceForm/AllowanceForm'
+import { base } from 'viem/chains'
 
 interface AllowanceManagerProps {
-    tokenAddress: `0x${string}`
+    tokenAddress: Address
 }
 
 export function AllowanceManager({ tokenAddress }: AllowanceManagerProps) {
@@ -68,7 +69,7 @@ export function AllowanceManager({ tokenAddress }: AllowanceManagerProps) {
                     <strong>Adresse:</strong> {tokenAddress}
                 </p>
                 <p>
-                    <strong>Chain ID:</strong> {chain?.id} {chain?.id === 8453 && <span> Base</span>}
+                    <strong>Chain ID:</strong> {chain?.id} {chain?.id === base.id && <span> Base</span>}
                 </p>
             </div>
             <div className={styles.allowancesForm}>

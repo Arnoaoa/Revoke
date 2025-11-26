@@ -31,7 +31,7 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
           <App />
         </RainbowKitProvider>
       </QueryClientProvider>
-    </WagmiProvider>
+      </WagmiProvider>
   </React.StrictMode>,
 )
 

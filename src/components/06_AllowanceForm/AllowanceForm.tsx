@@ -1,4 +1,4 @@
-import { useState } from "react"
+import {useState } from "react"
 import styles from './AllowanceForm.module.css'
 interface AllowanceFormProps {
     onRevoke: (spender: string) => void

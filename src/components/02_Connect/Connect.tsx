@@ -1,25 +1,27 @@
 import { ConnectButton } from "@rainbow-me/rainbowkit";
 import styles from './Connect.module.css'
 import { useBalance } from 'wagmi';
-import { formatEther } from 'viem';
+import { formatEther, Hex } from 'viem';
+import { base } from "viem/chains";
 
 interface ConnectProps {
   isConnected: boolean;
-  address: string | undefined;
+  address: Hex | undefined;
   chainId: number;
 }
 
 export default function Connect({ isConnected, address, chainId }: ConnectProps) {
+
   const { data: balance } = useBalance({
-    address: address as `0x${string}` | undefined,
+    address: address,
   });
   return (
     <div className={styles.connectSection}>
-      <ConnectButton showBalance={{ smallScreen: false, largeScreen: false }} chainStatus="icon"/>
+      <ConnectButton  chainStatus="icon"/>
       {isConnected && (
         <div className={styles.connectionInfo}>
           <p><strong>Adresse:</strong> <code>{address}</code></p>
-          <p><strong>Chain ID:</strong> {chainId} {chainId === 8453 && <span className={styles.successMessage}>✓ Base</span>}</p> 
+          <p><strong>Chain ID:</strong> {chainId} {chainId === base.id && <span className={styles.successMessage}>✓ Base</span>}</p> 
           <p><strong>Solde:</strong> {balance ? `${parseFloat(formatEther(balance.value)).toFixed(4)}` : '...'} {balance?.symbol || ''}</p>
         </div>
       )}

@@ -1,4 +1,4 @@
-import {base, mainnet, sepolia} from 'wagmi/chains'
+import { base, mainnet, sepolia } from 'wagmi/chains'
 import { getDefaultConfig } from '@rainbow-me/rainbowkit';
 
 export const config = getDefaultConfig({
@@ -8,11 +8,9 @@ export const config = getDefaultConfig({
   ssr: false,
 });
 
+export const defaultChainId = base.id
 
-declare module 'wagmi' {
-  interface Register {
-    config: typeof config
-  }
-}
+
+
 // donne la config à typescript ->  connaît le type exact de config (chaînes, RPC, etc.) 
 //et vérifie que bons types utilisés partout.
