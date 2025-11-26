@@ -5,7 +5,7 @@ export const config = getDefaultConfig({
   appName: 'RevokeYourBase',
   projectId: '67ba6ffd39732cee08e6bc35821f600f',
   chains: [base, mainnet, sepolia],
-  ssr: false, // If your dApp uses server side rendering (SSR)
+  ssr: false,
 });
 
 
@@ -14,3 +14,5 @@ declare module 'wagmi' {
     config: typeof config
   }
 }
+// donne la config à typescript ->  connaît le type exact de config (chaînes, RPC, etc.) 
+//et vérifie que bons types utilisés partout.
