@@ -28,7 +28,7 @@ export function AllowanceManager({ tokenAddress }: AllowanceManagerProps) {
         hash,
     })
 
-    // Maintenant on peut faire le return conditionnel APRÈS tous les hooks
+    
     if (!tokenName) {
         return (
             <div className={styles.tokenInfo}>
