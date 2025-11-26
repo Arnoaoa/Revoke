@@ -13,8 +13,8 @@
     "buffer": "^6.0.3",
     "react": "latest",
     "react-dom": "latest",
-    "viem": "^2.40.0",
-    "wagmi": "^2.9.0"
+    "viem": "^2.38.0",
+    "wagmi": "^2.19.3"
   },
   "devDependencies": {
     "@types/react": "latest",
